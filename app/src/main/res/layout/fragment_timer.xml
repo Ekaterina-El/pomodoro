@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="timerFragment"
+            type="ka.el.pomodorotimer.ui.TimerFragment" />
+
+        <variable
+            name="viewModel"
+            type="ka.el.pomodorotimer.viewModel.TimerViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow"
+        tools:context=".ui.TimerFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="20dp"
+                android:onClick="@{() -> viewModel.toggleHasTick()}"
+
+                android:src="@{viewModel.hasTick ? @drawable/ic_tick : @drawable/ic_no_tick}"
+                tools:src="@drawable/ic_no_tick" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jura"
+                    android:text="@{viewModel.mode}"
+                    android:textColor="@color/black"
+                    android:textSize="26sp"
+
+                    tools:text="Pomodoro" />
+
+                <RelativeLayout
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    >
+
+                    <ProgressBar
+                        android:id="@+id/circular_determinative_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminateOnly="false"
+                        android:progress="@{viewModel.percent}"
+                        android:progressDrawable="@drawable/pb_circular_determibative" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/jura"
+                        android:text="@{viewModel.lastTimer.toString()}"
+                        android:textColor="@color/black"
+
+                        android:textSize="24sp"
+
+                        tools:text="24:06" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="50dp"
+                        android:onClick="@{() -> timerFragment.toggleTimer()}"
+                        app:cardCornerRadius="5dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@color/red"
+                            android:src="@{viewModel.timerStarted ? @drawable/ic_pause : @drawable/ic_play }"
+                            tools:src="@drawable/ic_play" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:onClick="@{() -> timerFragment.stopTimer()}"
+                        app:cardCornerRadius="5dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@color/red"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_stop" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:background="@{viewModel.currentPomodoro == 2 ? @drawable/progress_item_red : viewModel.currentPomodoro == 1 ? @drawable/progress_item_light_red : @drawable/progress_item_white }"
+                    tools:background="@drawable/progress_item_red" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:background="@{viewModel.currentPomodoro == 3 ? @drawable/progress_item_red : viewModel.currentPomodoro == 2 ? @drawable/progress_item_light_red : @drawable/progress_item_white }"
+
+                    tools:background="@drawable/progress_item_light_red" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+
+                    android:background="@{viewModel.currentPomodoro == 4 ? @drawable/progress_item_red : viewModel.currentPomodoro == 3 ? @drawable/progress_item_light_red : @drawable/progress_item_white }"
+
+                    tools:background="@drawable/progress_item_white" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+
+                    android:background="@{viewModel.currentPomodoro == 5 ? @drawable/progress_item_red : viewModel.currentPomodoro == 4 ? @drawable/progress_item_light_red : @drawable/progress_item_white }"
+
+
+                    tools:background="@drawable/progress_item_white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>

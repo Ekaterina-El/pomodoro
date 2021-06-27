@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PomodoroTimer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_app">Pomodoro Timer</string>
+    <string name="author">By KEL</string>
+
+    <string name="settings_title">Pomodoro Settings</string>
+    <string name="pomodoro_title">Pomodoro</string>
+    <string name="short_break_title">Short Break</string>
+    <string name="long_break_title">Long Break</string>
+    <string name="end_work">End work</string>
+    <string name="start">Start</string>
+    <string name="number_of_pomodors_1_4">Number of pomodors: %1$d / %2$d</string>
+
+
+</resources>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="settingsFragment"
+            type="ka.el.pomodorotimer.ui.SettingsFragment" />
+
+        <variable
+            name="viewModel"
+            type="ka.el.pomodorotimer.viewModel.PomodoroSettingsViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow"
+        tools:context=".ui.SettingsFragment">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jura"
+                    android:text="@string/title_app"
+                    android:textColor="@color/red"
+                    android:textSize="28sp" />
+
+                <!--  Pomodoro Settings  -->
+                <LinearLayout
+                    android:layout_marginTop="55dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jura"
+                        android:text="@string/pomodoro_title"
+                        android:textColor="@color/red"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_minus"
+
+                            android:onClick="@{() -> viewModel.decrementValue(@string/pomodoro_title)}"
+
+                            />
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/jura"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"
+                            tools:text="25"
+
+                            android:text="@{viewModel.currentPomodoro.toString()}"
+                            />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_plus"
+
+                            android:onClick="@{() -> viewModel.incrementValue(@string/pomodoro_title)}"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--  Short Break Settings -->
+                <LinearLayout
+                    android:layout_marginTop="55dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jura"
+                        android:text="@string/short_break_title"
+                        android:textColor="@color/red"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_minus"
+
+                            android:onClick="@{() -> viewModel.decrementValue(@string/short_break_title)}"
+                            />
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/jura"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"
+                            tools:text="5"
+
+                            android:text="@{viewModel.currentShortBreak.toString()}"
+
+                            />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_plus"
+                            android:onClick="@{() -> viewModel.incrementValue(@string/short_break_title)}"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--  Long Break Settings -->
+                <LinearLayout
+                    android:layout_marginTop="55dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jura"
+                        android:text="@string/long_break_title"
+                        android:textColor="@color/red"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_minus"
+                            android:onClick="@{() -> viewModel.decrementValue(@string/long_break_title)}"
+
+                            />
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/jura"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"
+                            tools:text="15"
+
+                            android:text="@{viewModel.currentLongBreak.toString()}"
+                            />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_plus"
+                            android:onClick="@{() -> viewModel.incrementValue(@string/long_break_title)}"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jura"
+                    android:textSize="22sp"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="95dp"
+                    android:backgroundTint="@color/red"
+                    android:text="@string/start"
+                    android:textColor="@color/white"
+
+                    android:onClick="@{() -> settingsFragment.goWork()}"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>
