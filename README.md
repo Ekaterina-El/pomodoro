@@ -1,7 +1,7 @@
 
 <!-- PROJECT LOGO -->
 <p>
-  <h3 align="center">🎯Pomodor⏰/h3>
+  <h2 align="center">🎯Pomodor⏰</h3>
 </p>
 
 
