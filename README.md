@@ -1,5 +1,4 @@
 
-
 <!-- PROJECT LOGO -->
 <p>
   <h3 align="center">🎯Pomodor⏰/h3>
@@ -24,9 +23,8 @@
         <li><a href="#srceenshots">Screenshots</a></li>
         <ul>
           <li><a href="#splash-screen">Splash Screen</a></li>
-          <li><a href="#log-in--sing-in">Log in / Sing in</a></li>
-          <li><a href="#todo-list-screeen">Todo list Screeen</a></li>
-          <li><a href="https://github.com/Ekaterina-El/doit/blob/master/README.md#create--edit">Create / Edit</a></li>
+          <li><a href="#settings-screen">Settings Screen</a></li>
+          <li><a href="#timer-screen">Timer Screen</a></li>
         </ul>
       </ul>
     </li>
@@ -55,14 +53,21 @@ In this application, you can customize the work period, short break and long bre
 ## Usage
 
 ### Demo
-[🎬YouTube](https://www.youtube.com/watch?v=Qo6dEDRufZg)
+[🎬YouTube](https://www.youtube.com/watch?v=6n1VcdrFoT4)
 
 ### Srceenshots
 
 
 
 ##### 📌Splash Screen
+![image 11](https://user-images.githubusercontent.com/55324828/123540871-97dfff00-d75a-11eb-9c70-448d06f8e43e.png)
 
+##### 📌Settings Screen
+![image 12](https://user-images.githubusercontent.com/55324828/123540855-826ad500-d75a-11eb-9c8a-6eb8451e31ff.png)
+![image 13](https://user-images.githubusercontent.com/55324828/123540858-84cd2f00-d75a-11eb-8b6a-473c2c842c3b.png)
+
+##### 📌Timer Screen
+![image 14](https://user-images.githubusercontent.com/55324828/123540859-8696f280-d75a-11eb-8870-fe67287c4005.png)
 
 
 <!-- CONTACT -->
