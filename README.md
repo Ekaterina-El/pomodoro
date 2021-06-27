@@ -75,6 +75,6 @@ In this application, you can customize the work period, short break and long bre
 
 Ekaterina Elshina - [@Ekateri78892975](https://twitter.com/Ekateri78892975) - hackerrussia@yandex.ru
 
-Project Link: [https://github.com/KatyaEl/Tic-Tac-Toe](https://github.com/Ekaterina-El/pomodoro)
+Project Link: [https://github.com/Ekaterina-El/pomodoro](https://github.com/Ekaterina-El/pomodoro)
 
 
